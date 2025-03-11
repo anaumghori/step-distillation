@@ -8,13 +8,22 @@ This is my attempt at re-implementing the [Step-by-Step Distillation](https://ar
 
 2. **Dataset Preparation:** Modified the Salesforce/cos_e dataset from Hugging Face to include only the 'input' and 'label' columns.  
 
-3. **Rationale Generation:** Applied 10-shot prompting to generate rationales, but restricted this process to the train split.  
+3. **Rationale Generation:** Applied 10-shot prompting to generate rationales following the paper's method, but restricted this process to the train split.  
 
 4. **Student Model Training:** Trained the T5-small student model using the Step-by-Step Distillation method.  
 
 5. **Performance Evaluation:** Evaluated Step-by-Step Distillation against baseline approaches:  
    - Standard fine-tuning with T5-small.  
    - Few-shot Chain-of-Thought (CoT) inference using Qwen.  
+
+## Notebooks  
+
+| Notebook                  | Description |
+|---------------------------|--------------|
+| [**data_preparation.ipynb**](https://github.com/anaumghori/step-distillation/blob/main/data_preparation.ipynb) | Prepares data by modifying the Salesforce/cos_e dataset, generating rationales with Qwen, and saving the updated dataset to Hugging Face. |
+| [**standard_finetuning.ipynb**](https://github.com/anaumghori/step-distillation/blob/main/standard_finetuning.ipynb) | Performs standard fine-tuning on the original Salesforce/cos_e dataset using T5-small. |
+| [**step_distillation.ipynb**](https://github.com/anaumghori/step-distillation/blob/main/step_distillation.ipynb) | Trains T5-small using Step-by-Step Distillation on the modified dataset from Hugging Face. |
+
 
 ## Results  
 
